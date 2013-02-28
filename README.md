@@ -33,8 +33,8 @@ Start a new file, and save it as "Demo1.rb".
 
 Now type the following code that tells Shoes to make a window:
 
-	Shoes.app :width => 800, :height => 600 do
-	end
+  Shoes.app :width => 800, :height => 600 do
+  end
 
 Save the file. And now we're ready to run it!
 
@@ -54,9 +54,9 @@ First, we'll tell Shoes to make a head. The head is going to be an oval, and
 we need to tell Shoes the where to put it and how bit to make it. We'll also
 tell Shoes what color to make it.
 
-	Shoes.app :width => 800, :height => 600 do
-		@head = oval 225, 45, 400, 500, :fill => "#814BA6"
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @head = oval 225, 45, 400, 500, :fill => "#814BA6"
+  end
 
 You can pick the size and position and color that you want. I made my head be
 400 pixels wide, 500 pixels tall, 225 pixels from the left of the window, 45
@@ -68,25 +68,25 @@ file in Shoes.
 
 Let's add some eyes.
 
-	Shoes.app :width => 800, :height => 600 do
-		@head = oval 225, 45, 400, 500, :fill => "#814BA6"
-		@leftEye = oval 350, 150, 50, 75, :fill => "#D8E8F2"
-		@rightEye = oval 450, 150, 50, 75, :fill => "#D8E8F2"
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @head = oval 225, 45, 400, 500, :fill => "#814BA6"
+    @leftEye = oval 350, 150, 50, 75, :fill => "#D8E8F2"
+    @rightEye = oval 450, 150, 50, 75, :fill => "#D8E8F2"
+  end
 
 Now let's use some different shapes to finish our face.
 
-	Shoes.app :width => 800, :height => 600 do
-		@background = rect 0, 0, 800, 600, :fill => "#2C9E20"
-		@head = oval 225, 45, 400, 500, :fill => "#814BA6"
-		@leftEye = oval 350, 150, 50, 75, :fill => "#D8E8F2"
-		@leftEyeBall = oval 360, 190, 15, 15, :fill => "444444"
-		@rightEye = oval 450, 150, 50, 75, :fill => "#D8E8F2"
-		@leftEyeBall = oval 460, 190, 15, 15, :fill => "444444"
-		@mouth = rect 295, 400, 275, 50, :fill => "#CC4572"
-		@nose = star 420, 300, 5, 50, 10, :fill => "#EEEEEE"
-		@name = title "George Clooney", :left => 250, :top => 540
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @background = rect 0, 0, 800, 600, :fill => "#2C9E20"
+    @head = oval 225, 45, 400, 500, :fill => "#814BA6"
+    @leftEye = oval 350, 150, 50, 75, :fill => "#D8E8F2"
+    @leftEyeBall = oval 360, 190, 15, 15, :fill => "444444"
+    @rightEye = oval 450, 150, 50, 75, :fill => "#D8E8F2"
+    @leftEyeBall = oval 460, 190, 15, 15, :fill => "444444"
+    @mouth = rect 295, 400, 275, 50, :fill => "#CC4572"
+    @nose = star 420, 300, 5, 50, 10, :fill => "#EEEEEE"
+    @name = title "George Clooney", :left => 250, :top => 540
+  end
 
 Rectangles (rect) take the same number parameters as ovals: left, top, width,
 height. Stars (star) takes the following parameters: left, top, number of
@@ -101,35 +101,35 @@ Now we're going to learn how to make our drawings move.
 Start by making a new file and saving it as "Demo2.rb". Here's the starting
 code to make a window again:
 
-	Shoes.app :width => 800, :height => 600 do
-	end
+  Shoes.app :width => 800, :height => 600 do
+  end
 
 Go ahead and add a shape that we can animate. Put it somewhere in the middle
 of the screen.  I'm going to call mine "ball", and make it a circle:
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+  end
 
 Now let's add some animation!
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-	
-		animate 30 do
-		end
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+
+    animate 30 do
+    end
+  end
 
 This tells Shoes to run an animation, but it doesn't tell it what to do when
 then animation runs.  Let's add some code to move the ball.
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-	
-		animate 30 do
-			@ball.top += 5
-		end
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+
+    animate 30 do
+      @ball.top += 5
+    end
+  end
 
 Now Shoes will move the top of the ball down by 5 pixels 30 times every
 second. See if you can make the ball move up and to the left or right also.
@@ -138,15 +138,15 @@ You can also try adding more shapes and making them all move at the same time.
 You may be familiar with "if" statements from previous programming lessons. We
 can use an "if" statement to stop the ball from moving off the screen.
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-	
-		animate 30 do
-			if @ball.top < 500
-				@ball.top += 5
-			end
-		end
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+
+    animate 30 do
+      if @ball.top < 500
+        @ball.top += 5
+      end
+    end
+  end
 
 Now Shoes only moves the ball if it's top is less than 500, so the ball will
 stop when it's top gets to 500. I know that the height of the ball is 100, so
@@ -158,20 +158,20 @@ make Shoes do the calculation for us.
 
 Now let's learn how to respond to mouse clicks in our program.
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-	
-		animate 30 do
-			if @ball.top + @ball.height < 600
-				@ball.top += 5
-			end
-		end
-	
-		click do |button, x, y|
-			@ball.left = x - 50
-			@ball.top = y - 50
-		end
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+
+    animate 30 do
+      if @ball.top + @ball.height < 600
+        @ball.top += 5
+      end
+    end
+
+    click do |button, x, y|
+      @ball.left = x - 50
+      @ball.top = y - 50
+    end
+  end
 
 Shoes will run the `click` block whenever the mouse is clicked in our window.
 When this happens there are three pieces of information you can use in your
@@ -189,24 +189,24 @@ we've created. We can also use variables to store numbers that we can use to
 do more complicated animations. Let's make a variable to hold the current
 speed of the ball so that we can make a bouncing animation.
 
-	Shoes.app :width => 800, :height => 600 do
-		@ball = oval 350, 250, 100, 100, :fill => "#789789"
-		@ballSpeed = 0
-	
-		animate 30 do
-			@ball.top += @ballSpeed
-			@ballSpeed += 1
-			if @ball.top + @ball.height > 600
-				@ballSpeed = -@ballSpeed
-			end
-		end
-	
-		click do |button, x, y|
-			@ball.left = x - @ball.width/2
-			@ball.top = y - @ball.height/2
-			@ballSpeed = 0
-		end
-	end
+  Shoes.app :width => 800, :height => 600 do
+    @ball = oval 350, 250, 100, 100, :fill => "#789789"
+    @ballSpeed = 0
+
+    animate 30 do
+      @ball.top += @ballSpeed
+      @ballSpeed += 1
+      if @ball.top + @ball.height > 600
+        @ballSpeed = -@ballSpeed
+      end
+    end
+
+    click do |button, x, y|
+      @ball.left = x - @ball.width/2
+      @ball.top = y - @ball.height/2
+      @ballSpeed = 0
+    end
+  end
 
 Here's how the bouncing works: we keep a variable (`@ballSpeed`) that tells
 how fast the ball is moving. On each step of the animation, we move the ball
